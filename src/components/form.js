@@ -18,18 +18,18 @@ function Form() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div style={{display:'flex',flexDirection:'column',width:'500px',textAlign:'center',justifyContent:"space-around"}}>
                 <label style={{textAlign:'start',fontWeight:700}}>Name:</label>
-                <input type='text' name='first' placeholder='First Name' ref={register} style={{marginTop:'5px'}} />
-                <input type='text' name='last' placeholder='LastName' ref={register} style={{marginTop:'5px'}} />
+                <input type='text' name='first' placeholder='First Name' ref={register} style={{marginTop:'5px',border:'2px solid #FFB7CF',borderRadius:'4px'}} />
+                <input type='text' name='last' placeholder='LastName' ref={register} style={{marginTop:'5px',border:'2px solid #FFB7CF',borderRadius:'4px'}} />
                 <label style={{textAlign:'start',fontWeight:700}}>Email:</label>
-                <input type='email' name='email' placeholder='Email' ref={register} style={{marginTop:'5px'}} />
+                <input type='email' name='email' placeholder='Email' ref={register} style={{marginTop:'5px',border:'2px solid #FFB7CF',borderRadius:'4px'}} />
                 <label style={{textAlign:'start',fontWeight:700}}>Gender</label>
-                <select name='gender'ref={register}>
+                <select name='gender'ref={register} style={{border:'2px solid #FFB7CF',borderRadius:'4px'}}>
                     <option value=''>Select Gender</option>
                     <option value='Male'>Male</option>
                     <option value='Female'>Female</option>
                 </select>
                 <label style={{textAlign:'start',fontWeight:700}}>Age</label>
-                <input type='number' name='age' placeholder='Age' ref={register} style={{marginTop:'5px'}} />
+                <input type='number' name='age' placeholder='Age' ref={register} style={{marginTop:'5px',border:'2px solid #FFB7CF',borderRadius:'4px'}} />
                 <label style={{textAlign:'start',fontWeight:'700'}}>Marital Status:</label>
                 <div style={{textAlign:'start'}}>
                 <input type='radio' id='Maried' name='status' value='Maried'ref={register}/>
@@ -52,7 +52,7 @@ function Form() {
                 <input type='checkbox' id='btech' name='qualify' value='Btech'ref={register}/>
                 <label htmlFor='Btech'>Btech</label>
                 </div>
-                <div style={{textAlign:"center"}}><button type='submit' style={{color:"#FFB7CF",backgroundColor:"#3021B5",width:'100px',borderRadius:'25px',padding:'5px',fontWeight:700}}>Submit</button></div>
+                <div style={{textAlign:"center"}}><button type='submit' style={{color:"blue",backgroundColor:"#FFB7CF",width:'100px',borderRadius:'25px',padding:'5px',fontWeight:700}}>Submit</button></div>
                 </div>
             </form>
             
