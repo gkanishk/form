@@ -6,7 +6,6 @@ function Form() {
     const [formData,setData]=useState([]);
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        console.log(data);
         setData(data);
     }
     useEffect(() => {
@@ -14,9 +13,10 @@ function Form() {
     }, [formData])
     
     return (
-        <div>
+        <div style={{textAlign:"center"}}>
+        <div style={{backgroundColor:"#EFF3FE",opacity:"80%",borderRadius:"25px",textAlign:"center",height:"450px",width:"500px",padding:"20px",marginLeft:"350px",marginTop:"50px"}}>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div style={{display:'flex',flexDirection:'column',width:'500px'}}>
+                <div style={{display:'flex',flexDirection:'column',width:'500px',textAlign:'center'}}>
                 <input type='text' name='first' placeholder='First Name' ref={register}/>
                 <input type='text' name='last' placeholder='LastName' ref={register}/>
                 <input type='email' name='email' placeholder='Email' ref={register}/>
@@ -42,7 +42,9 @@ function Form() {
                 <button type='submit'>Submit</button>
                 </div>
             </form>
-            <Showdata data={formData}/>
+            
+        </div>
+        <Showdata data={formData}/>
         </div>
     )
 }
