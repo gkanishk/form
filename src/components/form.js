@@ -14,11 +14,13 @@ function Form() {
     
     return (
         <div style={{textAlign:"center"}}>
-        <div style={{backgroundColor:"#EFF3FE",opacity:"80%",borderRadius:"25px",textAlign:"center",height:"320px",width:"500px",padding:"20px",marginLeft:"350px",marginTop:"50px"}}>
+        <div style={{backgroundColor:"#EFF3FE",opacity:"80%",borderRadius:"25px",textAlign:"center",height:"400px",width:"500px",padding:"20px",marginLeft:"350px",marginTop:"50px"}}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div style={{display:'flex',flexDirection:'column',width:'500px',textAlign:'center',justifyContent:"space-around"}}>
+                <label style={{textAlign:'start',fontWeight:700}}>Name:</label>
                 <input type='text' name='first' placeholder='First Name' ref={register} style={{marginTop:'5px'}} />
                 <input type='text' name='last' placeholder='LastName' ref={register} style={{marginTop:'5px'}} />
+                <label style={{textAlign:'start',fontWeight:700}}>Email:</label>
                 <input type='email' name='email' placeholder='Email' ref={register} style={{marginTop:'5px'}} />
                 <label style={{textAlign:'start',fontWeight:700}}>Gender</label>
                 <select name='gender'ref={register}>
@@ -26,6 +28,7 @@ function Form() {
                     <option value='Male'>Male</option>
                     <option value='Female'>Female</option>
                 </select>
+                <label style={{textAlign:'start',fontWeight:700}}>Age</label>
                 <input type='number' name='age' placeholder='Age' ref={register} style={{marginTop:'5px'}} />
                 <label style={{textAlign:'start',fontWeight:'700'}}>Marital Status:</label>
                 <div style={{textAlign:'start'}}>
