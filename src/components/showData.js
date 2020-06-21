@@ -1,7 +1,9 @@
 import React from 'react'
 
 function Showdata(props) {
-    console.log(props)
+    React.useEffect(() => {
+        console.log("Welcome");
+      }, [])
     return (
         <div style={{backgroundColor:'#EFF3FE',opacity:'60%',width:'400px',marginLeft:'400px',padding:'20px',marginTop:'20px',borderRadius:'25px'}}>
         <div style={{textAlign:'start'}}>
