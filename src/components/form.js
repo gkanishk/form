@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 function Form() {
     const [formData,setData]=useState([]);
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit} = useForm();
     const onSubmit = data => {
         setData(data);
     }
