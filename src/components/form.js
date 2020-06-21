@@ -14,31 +14,41 @@ function Form() {
     
     return (
         <div style={{textAlign:"center"}}>
-        <div style={{backgroundColor:"#EFF3FE",opacity:"80%",borderRadius:"25px",textAlign:"center",height:"450px",width:"500px",padding:"20px",marginLeft:"350px",marginTop:"50px"}}>
+        <div style={{backgroundColor:"#EFF3FE",opacity:"80%",borderRadius:"25px",textAlign:"center",height:"300px",width:"500px",padding:"20px",marginLeft:"350px",marginTop:"50px"}}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div style={{display:'flex',flexDirection:'column',width:'500px',textAlign:'center'}}>
                 <input type='text' name='first' placeholder='First Name' ref={register}/>
                 <input type='text' name='last' placeholder='LastName' ref={register}/>
                 <input type='email' name='email' placeholder='Email' ref={register}/>
-                <label>Gender</label>
+                <label style={{textAlign:'start'}}>Gender</label>
                 <select name='gender'ref={register}>
                     <option value=''>Select Gender</option>
                     <option value='Male'>Male</option>
                     <option value='Female'>Female</option>
                 </select>
                 <input type='number' name='age' placeholder='Age' ref={register}/>
-                <label>Marital Status</label>
-                <label htmlFor='maried'>Maried</label>
+                <label style={{textAlign:'start',fontWeight:'700'}}>Marital Status:</label>
+                <div style={{textAlign:'start'}}>
                 <input type='radio' id='Maried' name='status' value='maried'ref={register}/>
-                <label htmlFor='unmaried'>Un-Maried</label>
+                <label htmlFor='maried'>Maried</label>
+                </div>
+                <div style={{textAlign:'start'}}>
                 <input type='radio' id='unmaried' name='status' value='unmaried'ref={register}/>
-                <label>Qualification</label>
-                <label htmlFor='ten'>10th</label>
+                <label htmlFor='unmaried'>Un-Maried</label>
+                </div>
+                <label style={{textAlign:'start',fontWeight:'700'}}>Qualification</label>
+                <div style={{textAlign:'start'}}>
                 <input type='checkbox' id='ten' name='qualify' value='ten'ref={register}/>
-                <label htmlFor='twelve'>12th</label>
+                <label htmlFor='ten'>10th</label>
+                </div>
+                <div style={{textAlign:'start'}}>
                 <input type='checkbox' id='twelve' name='qualify' value='twelve'ref={register}/>
-                <label htmlFor='btech'>Btech</label>
+                <label htmlFor='twelve'>12th</label>
+                </div>
+                <div style={{textAlign:'start'}}>
                 <input type='checkbox' id='btech' name='qualify' value='btech'ref={register}/>
+                <label htmlFor='btech'>Btech</label>
+                </div>
                 <button type='submit'>Submit</button>
                 </div>
             </form>
