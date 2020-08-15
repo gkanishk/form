@@ -1,15 +1,27 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import Form from './components/form';
+import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
+import User from './Components/User'
+import Admin from './Components/Admin'
+import Thankyou from './Components/Thankyou'
 
 function App() {
-  useEffect(() => {
-    console.log("Welcome App");
-  }, [])
   return (
-    <div className="App">
-      <Form/>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path='/thankyou'>
+            <Thankyou/>
+          </Route>
+          <Route path='/admin'>
+            <Admin/>
+          </Route>
+          <Route path='/user'>
+            <User/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
