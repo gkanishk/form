@@ -26,7 +26,7 @@ function FeedbackForm(prop) {
             })
         }
         e.preventDefault()
-        // history.push('/thankyou');
+        history.push('/thankyou');
     }
     return (
         <form onSubmit={submiFunction} className='formContainer'>
