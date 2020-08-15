@@ -27,6 +27,7 @@ function Admin() {
             Count:0,
             Name:value
         })
+        setValue('');
     }
     return (
         <div className='AdminContainer' key='adminContainer'>
