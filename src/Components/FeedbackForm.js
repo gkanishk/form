@@ -3,13 +3,14 @@ import firebase from '../firebase';
 import {useHistory} from 'react-router-dom'
 
 function FeedbackForm(prop) {
-    const [sumitData,setSubmit]=React.useState({value:'',id:'',count:''});
+    const [sumitData,setSubmit]=React.useState({value:'',id:'',count:0});
     const [useremail,setEmail]=React.useState({email:''});
     let history=useHistory();
     const submiFunction=(e)=>{
         const db=firebase.firestore();
         if(sumitData.id!=='other'){
-        db.collection('feedback').doc(sumitData.id).update({Count:sumitData.count+1})
+            console.log(typeof(sumitData.count), sumitData.count)
+        db.collection('feedback').doc(sumitData.id).update({Count:parseInt(sumitData.count)+1})
         db.collection('response').add({
             optionSelected:sumitData.value,
             optionId:sumitData.id,
@@ -25,7 +26,7 @@ function FeedbackForm(prop) {
             })
         }
         e.preventDefault()
-        history.push('/thankyou');
+        // history.push('/thankyou');
     }
     return (
         <form onSubmit={submiFunction} className='formContainer'>
@@ -36,7 +37,7 @@ function FeedbackForm(prop) {
             <p>Choose options:</p>
             {prop.data.map(dt=>(
             <span key={dt.id} className='formOption'> 
-            <input type='radio' id={dt.id} value={dt.data().Name} size={dt.data().Count} name='feedbackvalue' onChange={e=>setSubmit({value:e.target.value,id:e.target.id,count:e.target.size})}/>
+            <input type='radio' id={dt.id} value={dt.data().Name} data-count={dt.data().Count} size={dt.data().Count} name='feedbackvalue' onChange={e=>{setSubmit({value:e.target.value,id:e.target.id,count:e.currentTarget.dataset.count});console.log(e.currentTarget.dataset.count)}}/>
             <label htmlFor={dt.id}>{dt.data().Name}</label>
             </span>
             ))}
